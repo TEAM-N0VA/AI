@@ -1,0 +1,46 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# editor
+.idea/
+.vscode/
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtual environment
+venv/
+env/
+.venv/
+
+# env files
+.env
+secret.json
+
+# django
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# ai models
+*.pt
+*.pth
+*.h5
+*.onnx
+
+# datasets & logs
+datasets/
+small_data/
+runs/
+*.csv
+*.npy
+
+# jupyter
+.ipynb_checkpoints/
+
+# os
+.DS_Store
+Thumbs.db
