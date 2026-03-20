@@ -2,7 +2,6 @@
 임신성 당뇨 산모를 위한 YOLO 활용한 식단 자동 기록 및 RAG 기반 식단 코칭 서비스 **밀당의 AI 서버 리포지토리**입니다.  
 음식 이미지 객체 인식, 챗봇 API를 제공합니다.
 
----
 ## 📁 폴더 구조
 ```bash
 AI
@@ -16,11 +15,10 @@ AI
 └── requirements.txt    # 파이썬 패키지 의존성 목록
 ```
 
----
 ## 🚀 실행 방법
 
 ### 1️⃣ 실행 환경
-* Python: v3.10.x 권장
+Python: v3.10.x 권장
 
 ### 2️⃣ 저장소 클론
 ```bash
@@ -47,13 +45,26 @@ pip install -r requirements.txt
 ### 5️⃣ 환경 변수 및 모델 파일 준비
 * `.env` 파일 생성 후 필요한 값 채워넣기 (추후 팀 노션 또는 카톡 참고)
 * 모델 실행을 위해 `model/` 폴더 내에 모델 파일 배치 (구글 드라이브 참고)
+```bash
+# SERVER SETTINGS
+DEBUG_MODE=true
+PORT=8000
+
+# AI MODEL PATHS
+YOLO_MODEL_PATH=./model/food_3_best.pt
+
+# OPEN AI
+OPEN_API_KEY={직접 받은 Open AI API 키}
+
+# CORS SETTINGS
+ALLOW_ORIGINS={FE/BE 서버 주소}
+```
   
 ### 6️⃣ 서버 실행
 ```bash
 uvicorn main:app --reload
 ```
 
----
 ## 🌿 브랜치 전략
 * main : 배포용
 * develop : 개발 통합
