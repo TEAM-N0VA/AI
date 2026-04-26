@@ -12,7 +12,13 @@ export function ChatBubble({ role, text }: { role: ChatRole; text: string }) {
         marginVertical: 6,
         padding: 12,
         borderRadius: 16,
-        backgroundColor: isUser ? "#1f2937" : "#f3f4f6",
+        backgroundColor: isUser ? "#2B2F3A" : "#ffffff",
+        
+        shadowColor: "#000",
+        shadowOpacity: 0.05,
+        shadowRadius: 6,
+        shadowOffset: { width: 0, height: 2 },
+        elevation: 2,
       }}
     >
       <Text style={{ color: isUser ? "white" : "#111827", lineHeight: 20 }}>{text}</Text>

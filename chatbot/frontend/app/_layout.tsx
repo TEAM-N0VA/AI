@@ -25,6 +25,8 @@ export default function RootLayout() {
         headerTitleAlign: "center",
         headerTintColor: "#4B3B4B",
 
+        headerBackTitle: "",
+
         headerTitle: () => (
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text
