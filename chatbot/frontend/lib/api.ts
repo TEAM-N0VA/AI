@@ -1,11 +1,20 @@
+import Constants from "expo-constants";
 import { ChatMsg, ChatResponse } from "./types";
 
-const DEFAULT_BASE_URL = "http://127.0.0.1:8000";
+const BACKEND_PORT = 8000;
 
 export function getBaseUrl() {
-  // Android 에뮬레이터면 보통 10.0.2.2 
-  // iOS simulator / web / local mac: 127.0.0.1 OK
-  return process.env.EXPO_PUBLIC_API_BASE_URL ?? DEFAULT_BASE_URL;
+  if (process.env.EXPO_PUBLIC_API_BASE_URL) {
+    return process.env.EXPO_PUBLIC_API_BASE_URL;
+  }
+  // Expo записывает LAN-IP dev-сервера в hostUri ("192.168.x.x:8081")
+  // берём только IP и подставляем порт бэкенда
+  const hostUri = Constants.expoConfig?.hostUri;
+  if (hostUri) {
+    const host = hostUri.split(":")[0];
+    return `http://${host}:${BACKEND_PORT}`;
+  }
+  return `http://127.0.0.1:${BACKEND_PORT}`;
 }
 
 export async function health() {
