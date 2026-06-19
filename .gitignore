@@ -44,3 +44,9 @@ runs/
 # os
 .DS_Store
 Thumbs.db
+
+# chb
+.chroma
+__pycache__
+.venv
+.env
